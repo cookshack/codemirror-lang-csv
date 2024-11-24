@@ -16,8 +16,6 @@ export const csvLanguage = LRLanguage.define({
         Separator: t.separator,
         Value: t.string,
         String: t.string,
-        LineComment: t.lineComment,
-        "( )": t.paren,
       }),
     ],
   }),
