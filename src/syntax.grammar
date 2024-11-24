@@ -12,7 +12,7 @@ expression {
   Separator { $[,;] }
 
   Value { ![,;\n]+ }
-  
+
   String { '"' (!["\\] | "\\" _)* '"' }
 
   newline { $[\n]}
