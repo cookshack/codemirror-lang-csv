@@ -11,11 +11,11 @@ expression {
 @tokens {
   Separator { $[,;] }
 
-  Value { ![,;\n]+ }
+  Value { ![,;\r\n]+ }
 
   String { '"' (!["\\] | "\\" _)* '"' }
 
-  newline { $[\n]}
+  newline { '\r'? '\n' }
 
   @precedence { String, Separator, Value }
 }
