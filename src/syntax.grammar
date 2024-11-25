@@ -1,6 +1,8 @@
-@top Program { expression* }
+@top Program { (Row newline)* (Row (newline | eof)) }
 
-@skip { newline }
+@skip {}
+
+Row { expression* }
 
 expression {
   String |
@@ -16,6 +18,7 @@ expression {
   String { '"' (!["\\] | "\\" _)* '"' }
 
   newline { '\r'? '\n' }
+  eof { @eof }
 
   @precedence { String, Separator, Value }
 }

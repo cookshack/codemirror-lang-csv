@@ -1,10 +1,16 @@
+# Empty
+
+
+==>
+Program(Row)
+
 # Separators
 ,
 ;
 
 ==>
 
-Program(Separator, Separator)
+Program(Row(Separator), Row(Separator))
 
 # Strings
 
@@ -14,7 +20,7 @@ Program(Separator, Separator)
 
 ==>
 
-Program(String, String, String)
+Program(Row(String), Row(String), Row(String))
 
 
 # Example
@@ -24,4 +30,5 @@ one;"two";three;four
 
 ==>
 
-Program(Value,Separator,String,Separator,Value,Separator,Value,String,Separator,Value,Separator,Separator,String)
+Program(Row(Value,Separator,String,Separator,Value,Separator,Value),
+        Row(String,Separator,Value,Separator,Separator,String))
