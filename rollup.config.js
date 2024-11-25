@@ -1,12 +1,16 @@
-import typescript from "rollup-plugin-ts";
-import { lezer } from "@lezer/generator/rollup";
+import { lezer } from '@lezer/generator/rollup'
+
+function external
+(id) {
+  if ((id == 'tslib') || /^(\.?\/|\w:)/.test(id))
+    return false
+  return true
+}
 
 export default {
-  input: "src/index.ts",
-  external: (id) => id != "tslib" && !/^(\.?\/|\w:)/.test(id),
-  output: [
-    { file: "dist/index.cjs", format: "cjs" },
-    { dir: "./dist", format: "es" },
-  ],
-  plugins: [lezer(), typescript()],
-};
+  input: 'src/index.js',
+  external,
+  output: [ { file: 'dist/index.cjs', format: 'cjs' },
+            { dir: './dist', format: 'es' } ],
+  plugins: [ lezer() ]
+}
