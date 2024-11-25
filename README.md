@@ -1,4 +1,4 @@
-# codemirror-lang-csv
+# @cookshack/codemirror-lang-csv
 
 Minimal [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) language package for [CodeMirror 6](https://codemirror.net/), with basic rainbow highlighting.
 
