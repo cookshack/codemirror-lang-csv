@@ -4,8 +4,9 @@
   "description": "CSV language support for CodeMirror",
   "homepage": "https://git.sr.ht/~mattmundell/codemirror-lang-csv",
   "scripts": {
-    "test": "mocha test/test.js",
-    "prepare": "husky"
+    "check": "NODE_OPTIONS=--disable-warning=ExperimentalWarning npx eslint --no-warn-ignored -f ./eslint-formatter.mjs src/*.js",
+    "prepare": "rollup -c",
+    "test": "mocha test/test.js"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -18,13 +19,14 @@
   "dependencies": {
     "@codemirror/language": "^6.0.0",
     "@lezer/highlight": "^1.0.0",
-    "@lezer/lr": "^1.0.0",
-    "husky": "^9.1.7"
+    "@lezer/lr": "^1.0.0"
   },
   "devDependencies": {
+    "@cookshack/eslint-config": "^0.1.5",
     "@lezer/generator": "^1.0.0",
-    "mocha": "^10.8.2",
-    "rollup": "^4.27.4"
+    "eslint": "^9.15.0",
+    "mocha": "^9.0.1",
+    "rollup": "^2.60.2"
   },
   "repository": {
     "type": "git",
