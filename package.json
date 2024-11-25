@@ -32,5 +32,10 @@
     "type": "git",
     "url": "git+https://git.sr.ht/~mattmundell/codemirror-lang-csv"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "src",
+    "test",
+    "rollup.config.js"
+  ]
 }
