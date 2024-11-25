@@ -1,17 +1,17 @@
 import { parser } from "./syntax.grammar";
-import {
-  LRLanguage,
-  LanguageSupport,
-} from "@codemirror/language";
-import { styleTags, tags as t } from "@lezer/highlight";
+import { LRLanguage, LanguageSupport, syntaxHighlighting } from "@codemirror/language";
+import { styleTags, tagHighlighter, tags as t } from "@lezer/highlight";
 
 export const csvLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
       styleTags({
         Separator: t.separator,
-        Value: t.string,
-        String: t.string,
+        Cell1: t.string,
+        Cell2: t.keyword,
+        Cell3: t.number,
+        Cell4: t.definition(t.variableName),
+        Cell5: t.typeName,
       }),
     ],
   }),

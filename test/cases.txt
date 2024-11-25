@@ -2,7 +2,7 @@
 
 
 ==>
-Program(Row)
+Program(Row(Cell1))
 
 # Separators
 ,
@@ -10,7 +10,7 @@ Program(Row)
 
 ==>
 
-Program(Row(Separator), Row(Separator))
+Program(Row(Cell1,Separator,Cell2), Row(Cell1,Separator,Cell2))
 
 # Strings
 
@@ -20,15 +20,15 @@ Program(Row(Separator), Row(Separator))
 
 ==>
 
-Program(Row(String), Row(String), Row(String))
+Program(Row(Cell1), Row(Cell1), Row(Cell1))
 
 
 # Example
 
-one;"two";three;four
-"first";second;;"fourth"
+one;"two";three;four;five,6
+"first";second;;"fourth",five,"six"
 
 ==>
 
-Program(Row(Value,Separator,String,Separator,Value,Separator,Value),
-        Row(String,Separator,Value,Separator,Separator,String))
+Program(Row(Cell1,Separator,Cell2,Separator,Cell3,Separator,Cell4,Separator,Cell5,Separator,Cell1),
+        Row(Cell1,Separator,Cell2,Separator,Cell3,Separator,Cell4,Separator,Cell5,Separator,Cell1))

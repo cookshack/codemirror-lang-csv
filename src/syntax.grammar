@@ -2,25 +2,35 @@
 
 @skip {}
 
-Row { expression* }
+Row { group }
+
+group { Cell1 (Separator Cell2 (Separator Cell3 (Separator Cell4 (Separator Cell5 (Separator group)?)?)?)?)? }
+
+Cell1 { expression }
+Cell2 { expression }
+Cell3 { expression }
+Cell4 { expression }
+Cell5 { expression }
 
 expression {
-  String |
-  Separator |
-  Value
+  empty |
+  string |
+  value
 }
+
+empty { }
 
 @tokens {
   Separator { $[,;] }
 
-  Value { ![,;\r\n]+ }
+  value { ![,;\r\n]+ }
 
-  String { '"' (!["\\] | "\\" _)* '"' }
+  string { '"' (!["\\] | "\\" _)* '"' }
 
   newline { '\r'? '\n' }
   eof { @eof }
 
-  @precedence { String, Separator, Value }
+  @precedence { string, Separator, value }
 }
 
 @detectDelim
