@@ -1,6 +1,8 @@
 # codemirror-lang-csv
 
-Minimal [csv](https://en.wikipedia.org/wiki/Comma-separated_values) language package for [CodeMirror 6](https://github.com/codemirror/dev/)
+Minimal [csv](https://en.wikipedia.org/wiki/Comma-separated_values) language package for [CodeMirror 6](https://github.com/codemirror/dev/), with basic rainbow highlighting.
+
+Based on Ian Bobinac's [codemirror-lang-csv](https://github.com/maybebot/codemirror-lang-csv.git).
 
 ## Usage
 
