@@ -5,7 +5,7 @@
   "homepage": "https://git.sr.ht/~mattmundell/codemirror-lang-csv",
   "scripts": {
     "test": "mocha test/test.js",
-    "prepare": "rollup -c"
+    "prepare": "husky"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -18,7 +18,8 @@
   "dependencies": {
     "@codemirror/language": "^6.0.0",
     "@lezer/highlight": "^1.0.0",
-    "@lezer/lr": "^1.0.0"
+    "@lezer/lr": "^1.0.0",
+    "husky": "^9.1.7"
   },
   "devDependencies": {
     "@lezer/generator": "^1.0.0",
